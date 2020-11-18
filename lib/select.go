@@ -9,7 +9,7 @@ func SelectTarget(platforms []string) ([]string, error) {
 		Options: platforms,
 	}
 
-	if err := survey.AskOne(prompt, &targets); err != nil {
+	if err := survey.AskOne(prompt, &targets); err != nil && err.Error() != "interrupt" {
 		return nil, err
 	}
 

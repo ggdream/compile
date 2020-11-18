@@ -1,7 +1,8 @@
 package main
 
+
 func main() {
-	if err := app(); err != nil {
-		panic(err)
+	if err := runCli(); err != nil {
+		println(err.Error())
 	}
 }
